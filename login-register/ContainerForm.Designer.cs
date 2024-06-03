@@ -34,8 +34,8 @@
             pictureBox2 = new PictureBox();
             panel1 = new Panel();
             panel2 = new Panel();
-            label1 = new Label();
             pictureBox1 = new PictureBox();
+            loginOrRegister = new Label();
             ((System.ComponentModel.ISupportInitialize)pfpBox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel2.SuspendLayout();
@@ -106,7 +106,7 @@
             // 
             panel2.BackColor = Color.Tan;
             panel2.Controls.Add(pictureBox1);
-            panel2.Controls.Add(label1);
+            panel2.Controls.Add(loginOrRegister);
             panel2.Controls.Add(pictureBox2);
             panel2.Controls.Add(exitButton);
             panel2.Controls.Add(pfpBox);
@@ -116,17 +116,6 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(1089, 84);
             panel2.TabIndex = 30;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Candara", 15.75F);
-            label1.Location = new Point(832, 27);
-            label1.Name = "label1";
-            label1.Size = new Size(152, 26);
-            label1.TabIndex = 29;
-            label1.Text = "Login / Register";
-            label1.Click += label1_Click_1;
             // 
             // pictureBox1
             // 
@@ -138,6 +127,17 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 30;
             pictureBox1.TabStop = false;
+            // 
+            // loginOrRegister
+            // 
+            loginOrRegister.AutoSize = true;
+            loginOrRegister.Font = new Font("Candara", 15.75F);
+            loginOrRegister.Location = new Point(832, 27);
+            loginOrRegister.Name = "loginOrRegister";
+            loginOrRegister.Size = new Size(152, 26);
+            loginOrRegister.TabIndex = 29;
+            loginOrRegister.Text = "Login / Register";
+            loginOrRegister.Click += loginOrRegister_Click;
             // 
             // ContainerForm
             // 
@@ -168,7 +168,7 @@
         private PictureBox pictureBox2;
         private Panel panel1;
         private Panel panel2;
-        private Label label1;
+        private Label loginOrRegister;
         private PictureBox pictureBox1;
     }
 }

@@ -59,10 +59,11 @@ namespace login_register
         {
             loadform(new HomePage());
         }
-        private void label1_Click_1(object sender, EventArgs e)
+        private void loginOrRegister_Click(object sender, EventArgs e)
         {
-            //Delete user object 
-            //
+            //Restart application
+            System.Diagnostics.Process.Start(Application.ExecutablePath);
+            Application.Exit();
         }
     }
 }
