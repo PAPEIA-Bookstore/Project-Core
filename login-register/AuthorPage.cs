@@ -16,7 +16,13 @@ namespace login_register
         {
             InitializeComponent();
             pictureBox1.Load(User.GetProfilePic());
-            label1.Text = "@" + User.GetUsername();
+            authorNameLabel.Text = User.GetFullName();
+            authorUsernameLabel.Text = "@" + User.GetUsername();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

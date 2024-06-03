@@ -15,11 +15,13 @@ namespace login_register
 {
     public partial class HomePage : Form
     {
+        private ContainerForm containerForm;
         private List<Book> Books;
-        public HomePage()
+        public HomePage(ContainerForm containerForm)
         {
             InitializeComponent();
             Books = new List<Book>();
+            this.containerForm = containerForm;
         }
 
 
@@ -46,6 +48,8 @@ namespace login_register
             picBox.SizeMode = PictureBoxSizeMode.StretchImage;
             picBox.Load(book.cover);
             picBox.Tag = book.isbn;
+            picBox.Click += (sender, e) => PicBox_Click(sender, e, book);
+            picBox.Cursor = Cursors.Hand;
 
             //Create title label
             Label titleLabel;
@@ -73,43 +77,65 @@ namespace login_register
             panel.Controls.Add(titleLabel);
             panel.Controls.Add(authorLabel);
 
+
         }
 
-        
+        private void PicBox_Click(object sender, EventArgs e, Book book)
+        {
+            BookPage bp = new BookPage(book);
+            this.containerForm.LoadForm(bp);
+            this.containerForm.Show();
+            this.Close();
+        }
+
+        private void GetBooks(string query)
+        {
+            // MessageBox.Show("The search bar is empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            NpgsqlConnection connection = DBHandler.OpenConnection();
+            NpgsqlCommand command = DBHandler.GetCommand(connection);
+            command.CommandText = query;
+            NpgsqlDataReader reader = command.ExecuteReader();
+            if (reader.HasRows)
+            {
+                Books.Clear();
+                while (reader.Read())
+                {
+                    Book book = new Book(reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetFloat(5), reader.GetString(6));
+                    Books.Add(book);
+
+                }
+
+                while (Books.Count > 0)
+                {
+                    AddBookToUI(Books[0]);
+                    Books.RemoveAt(0);
+                }
+            }
+            else
+            {
+                //No books were found
+            }
+            reader.Close();
+            DBHandler.CloseConnection(connection, command);
+        }
+
         private void SearchLabel_Click(object sender, EventArgs e)
         {
             flowLayoutPanel.Controls.Clear();
             if (String.IsNullOrWhiteSpace(searchBar.Text))
             {
-                MessageBox.Show("The search bar is empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // MessageBox.Show("The search bar is empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.GetBooks("SELECT * FROM books;");
             }
             else
             {
-                NpgsqlConnection connection = DBHandler.OpenConnection();
-                NpgsqlCommand command = DBHandler.GetCommand(connection);
-                command.CommandText = "SELECT * FROM books WHERE (title = '" + searchBar.Text + "');";
-                NpgsqlDataReader reader = command.ExecuteReader();
-                if (reader.HasRows)
-                {
-                    while (reader.Read())
-                    {
-                        Book book = new Book(reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetFloat(5), reader.GetString(6));
-                        Books.Add(book);
-                    }
-
-                    while (Books.Count > 0)
-                    {
-                        AddBookToUI(Books[0]);
-                        Books.RemoveAt(0);
-                    }
-                }
-                else
-                {
-                    //No books were found
-                }
-                reader.Close();
-                DBHandler.CloseConnection(connection,command);
+                this.GetBooks("SELECT * FROM books WHERE title like '%" + searchBar.Text + "%';");
             }
+        }
+
+        private void HomePage_Load(object sender, EventArgs e)
+        {
+            this.GetBooks("SELECT * FROM books;");
         }
     }
 }

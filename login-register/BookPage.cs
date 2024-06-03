@@ -36,7 +36,6 @@ namespace login_register
 
         }
 
-
         private void star1_Click(object sender, EventArgs e)
         {
             star1.Image = Resources.star_filled;
@@ -98,6 +97,11 @@ namespace login_register
             command.ExecuteNonQuery();
             MessageBox.Show("You review has been posted!", "Thank you", MessageBoxButtons.OK, MessageBoxIcon.Information);
             DBHandler.CloseConnection(connection, command);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

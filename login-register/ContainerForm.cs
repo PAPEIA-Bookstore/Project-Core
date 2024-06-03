@@ -20,7 +20,7 @@ namespace login_register
             this.User = User;
             pfpBox.Load(User.GetProfilePic());
             usernameLabel.Text = "@" + User.GetUsername();
-            LoadForm(new HomePage());
+            LoadForm(new HomePage(this));
         }
         /*
          Η συνάρτηση που διαχειρίζεται το container panel (panel1)
@@ -64,7 +64,7 @@ namespace login_register
 
         private void bookLand_Click(object sender, EventArgs e)
         {
-            LoadForm(new HomePage());
+            LoadForm(new HomePage(this));
         }
     }
 }

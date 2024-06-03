@@ -29,54 +29,84 @@
         private void InitializeComponent()
         {
             pictureBox1 = new PictureBox();
-            label1 = new Label();
+            authorNameLabel = new Label();
             label2 = new Label();
+            profCover = new PictureBox();
+            authorUsernameLabel = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)profCover).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
             // 
-            pictureBox1.Location = new Point(38, 59);
+            pictureBox1.Location = new Point(22, 234);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(100, 97);
+            pictureBox1.Size = new Size(100, 100);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 3;
             pictureBox1.TabStop = false;
             // 
-            // label1
+            // authorNameLabel
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(156, 80);
-            label1.Name = "label1";
-            label1.Size = new Size(94, 40);
-            label1.TabIndex = 2;
-            label1.Text = "label1";
+            authorNameLabel.AutoSize = true;
+            authorNameLabel.Font = new Font("Candara", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            authorNameLabel.ForeColor = Color.PapayaWhip;
+            authorNameLabel.Location = new Point(149, 234);
+            authorNameLabel.Name = "authorNameLabel";
+            authorNameLabel.Size = new Size(138, 36);
+            authorNameLabel.TabIndex = 2;
+            authorNameLabel.Text = "Full Name";
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.BackColor = Color.PapayaWhip;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(167, 141);
+            label2.ForeColor = Color.FromArgb(73, 60, 52);
+            label2.Location = new Point(149, 313);
             label2.Name = "label2";
-            label2.Size = new Size(56, 21);
+            label2.Size = new Size(84, 21);
             label2.TabIndex = 4;
-            label2.Text = "author";
+            label2.Text = "Author ✔";
+            label2.Click += label2_Click;
+            // 
+            // profCover
+            // 
+            profCover.Image = Properties.Resources.profCover;
+            profCover.Location = new Point(0, 0);
+            profCover.Name = "profCover";
+            profCover.Size = new Size(1089, 218);
+            profCover.SizeMode = PictureBoxSizeMode.StretchImage;
+            profCover.TabIndex = 5;
+            profCover.TabStop = false;
+            // 
+            // authorUsernameLabel
+            // 
+            authorUsernameLabel.AutoSize = true;
+            authorUsernameLabel.Font = new Font("Candara", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            authorUsernameLabel.ForeColor = Color.PapayaWhip;
+            authorUsernameLabel.Location = new Point(149, 270);
+            authorUsernameLabel.Name = "authorUsernameLabel";
+            authorUsernameLabel.Size = new Size(109, 23);
+            authorUsernameLabel.TabIndex = 6;
+            authorUsernameLabel.Text = "@username";
             // 
             // AuthorPage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.PapayaWhip;
-            ClientSize = new Size(800, 450);
+            BackColor = Color.Tan;
+            ClientSize = new Size(1089, 605);
+            Controls.Add(authorUsernameLabel);
+            Controls.Add(profCover);
             Controls.Add(label2);
             Controls.Add(pictureBox1);
-            Controls.Add(label1);
+            Controls.Add(authorNameLabel);
             FormBorderStyle = FormBorderStyle.None;
             Name = "AuthorPage";
             Text = "AuthorPage";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)profCover).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -84,7 +114,9 @@
         #endregion
 
         private PictureBox pictureBox1;
-        private Label label1;
+        private Label authorNameLabel;
         private Label label2;
+        private PictureBox profCover;
+        private Label authorUsernameLabel;
     }
 }

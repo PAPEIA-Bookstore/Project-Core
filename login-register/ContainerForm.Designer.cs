@@ -153,7 +153,7 @@
         private Label label3;
         private PictureBox pfpBox;
         private Button exitButton;
-        private Panel panel1;
+        public Panel panel1;
         private Panel panel2;
         private Label loginOrRegister;
         private PictureBox bookLand;

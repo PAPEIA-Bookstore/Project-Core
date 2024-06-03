@@ -62,7 +62,8 @@ namespace login_register
                             User.SetProfilePic(dataReader.GetString(4));
                             User.SetAuthor(dataReader.GetBoolean(3));
 
-                            new ContainerForm(User).Show();
+                            ContainerForm containerForm = new ContainerForm(User);
+                            containerForm.Show();
                             this.Close();
                         }
                         else

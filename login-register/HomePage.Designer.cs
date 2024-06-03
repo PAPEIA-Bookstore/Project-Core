@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            pictureBox8 = new PictureBox();
             pictureBox9 = new PictureBox();
             splitContainer1 = new SplitContainer();
             comboBox1 = new ComboBox();
@@ -44,7 +43,6 @@
             flowLayoutPanel = new FlowLayoutPanel();
             searchBar = new TextBox();
             SearchLabel = new Label();
-            ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
@@ -52,15 +50,6 @@
             splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)trackBar1).BeginInit();
             SuspendLayout();
-            // 
-            // pictureBox8
-            // 
-            pictureBox8.Location = new Point(1209, 393);
-            pictureBox8.Name = "pictureBox8";
-            pictureBox8.Size = new Size(236, 240);
-            pictureBox8.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox8.TabIndex = 15;
-            pictureBox8.TabStop = false;
             // 
             // pictureBox9
             // 
@@ -101,7 +90,7 @@
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(42, 412);
+            comboBox1.Location = new Point(39, 403);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(121, 23);
             comboBox1.TabIndex = 0;
@@ -239,14 +228,13 @@
             BackColor = Color.PapayaWhip;
             ClientSize = new Size(1160, 704);
             Controls.Add(splitContainer1);
-            Controls.Add(pictureBox8);
             Controls.Add(pictureBox9);
             ForeColor = Color.Black;
             FormBorderStyle = FormBorderStyle.None;
             Name = "HomePage";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "HomePage";
-            ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
+            Load += HomePage_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel1.PerformLayout();
@@ -259,7 +247,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.PictureBox pictureBox9;
         private SplitContainer splitContainer1;
         private Label label3;

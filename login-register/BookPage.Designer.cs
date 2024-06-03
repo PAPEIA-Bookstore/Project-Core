@@ -35,9 +35,9 @@
             authorLabel = new Label();
             isbnLabel = new Label();
             categoryLabel = new Label();
+            forumButton = new Button();
             buyButton = new Button();
-            button1 = new Button();
-            flowLayoutPanel1 = new FlowLayoutPanel();
+            reviewsPanel = new FlowLayoutPanel();
             reviewsLabel = new Label();
             label1 = new Label();
             reviewText = new RichTextBox();
@@ -118,39 +118,40 @@
             categoryLabel.TabIndex = 5;
             categoryLabel.Text = "Category: Category";
             // 
+            // forumButton
+            // 
+            forumButton.BackColor = Color.Tan;
+            forumButton.FlatStyle = FlatStyle.Flat;
+            forumButton.Font = new Font("Candara", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            forumButton.ForeColor = Color.PapayaWhip;
+            forumButton.Location = new Point(27, 322);
+            forumButton.Name = "forumButton";
+            forumButton.Size = new Size(189, 36);
+            forumButton.TabIndex = 6;
+            forumButton.Text = "Visit Forum 🗨";
+            forumButton.UseVisualStyleBackColor = false;
+            // 
             // buyButton
             // 
             buyButton.BackColor = Color.Tan;
             buyButton.FlatStyle = FlatStyle.Flat;
             buyButton.Font = new Font("Candara", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             buyButton.ForeColor = Color.PapayaWhip;
-            buyButton.Location = new Point(27, 322);
+            buyButton.Location = new Point(242, 322);
             buyButton.Name = "buyButton";
-            buyButton.Size = new Size(189, 36);
-            buyButton.TabIndex = 6;
-            buyButton.Text = "Visit Forum 🗨";
+            buyButton.Size = new Size(298, 36);
+            buyButton.TabIndex = 7;
+            buyButton.Text = "Buy: 15,99€";
             buyButton.UseVisualStyleBackColor = false;
+            buyButton.Click += button1_Click;
             // 
-            // button1
+            // reviewsPanel
             // 
-            button1.BackColor = Color.Tan;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Candara", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.PapayaWhip;
-            button1.Location = new Point(242, 322);
-            button1.Name = "button1";
-            button1.Size = new Size(298, 36);
-            button1.TabIndex = 7;
-            button1.Text = "Buy: 15,99€";
-            button1.UseVisualStyleBackColor = false;
-            // 
-            // flowLayoutPanel1
-            // 
-            flowLayoutPanel1.BackColor = Color.Tan;
-            flowLayoutPanel1.Location = new Point(0, 408);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(1090, 197);
-            flowLayoutPanel1.TabIndex = 8;
+            reviewsPanel.BackColor = Color.Tan;
+            reviewsPanel.Location = new Point(0, 408);
+            reviewsPanel.Name = "reviewsPanel";
+            reviewsPanel.Size = new Size(1090, 197);
+            reviewsPanel.TabIndex = 8;
             // 
             // reviewsLabel
             // 
@@ -282,9 +283,9 @@
             Controls.Add(reviewText);
             Controls.Add(label1);
             Controls.Add(reviewsLabel);
-            Controls.Add(flowLayoutPanel1);
-            Controls.Add(button1);
+            Controls.Add(reviewsPanel);
             Controls.Add(buyButton);
+            Controls.Add(forumButton);
             Controls.Add(categoryLabel);
             Controls.Add(isbnLabel);
             Controls.Add(authorLabel);
@@ -312,9 +313,9 @@
         private Label authorLabel;
         private Label isbnLabel;
         private Label categoryLabel;
+        private Button forumButton;
         private Button buyButton;
-        private Button button1;
-        private FlowLayoutPanel flowLayoutPanel1;
+        private FlowLayoutPanel reviewsPanel;
         private Label reviewsLabel;
         private Label label1;
         private RichTextBox reviewText;
