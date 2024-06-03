@@ -20,15 +20,15 @@ namespace login_register
             this.User = User;
             pfpBox.Load(User.GetProfilePic());
             usernameLabel.Text = "@" + User.GetUsername();
-            loadform(new HomePage());
+            LoadForm(new HomePage());
         }
         /*
          Η συνάρτηση που διαχειρίζεται το container panel (panel1)
          Δίνει στο panel1 έλεγχο στην φόρμα που δέχεται ως παράμετρο
          */
-       public void loadform(object Form)
+        public void LoadForm(object Form)
         {
-          if(this.panel1.Controls.Count > 0) this.panel1.Controls.RemoveAt(0);
+            if (this.panel1.Controls.Count > 0) this.panel1.Controls.RemoveAt(0);
             Form f = Form as Form;
             f.TopLevel = false;
             f.Dock = DockStyle.Fill;
@@ -41,11 +41,11 @@ namespace login_register
         {
             if (User.GetAuthor() == true)
             {
-                loadform(new AuthorPage());
+                LoadForm(new AuthorPage());
             }
             else
             {
-                loadform(new UserPage());
+                LoadForm(new UserPage());
             }
         }
 
@@ -55,15 +55,16 @@ namespace login_register
             Application.Exit();
         }
 
-        private void pictureBox2_Click_1(object sender, EventArgs e)
-        {
-            loadform(new HomePage());
-        }
         private void loginOrRegister_Click(object sender, EventArgs e)
         {
             //Restart application
             System.Diagnostics.Process.Start(Application.ExecutablePath);
             Application.Exit();
+        }
+
+        private void bookLand_Click(object sender, EventArgs e)
+        {
+            LoadForm(new HomePage());
         }
     }
 }

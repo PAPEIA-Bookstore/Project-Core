@@ -31,24 +31,23 @@
             usernameLabel = new Label();
             pfpBox = new PictureBox();
             exitButton = new Button();
-            pictureBox2 = new PictureBox();
             panel1 = new Panel();
             panel2 = new Panel();
-            pictureBox1 = new PictureBox();
+            bookLand = new PictureBox();
             loginOrRegister = new Label();
             ((System.ComponentModel.ISupportInitialize)pfpBox).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)bookLand).BeginInit();
             SuspendLayout();
             // 
             // usernameLabel
             // 
             usernameLabel.AutoSize = true;
             usernameLabel.BackColor = Color.Tan;
+            usernameLabel.Cursor = Cursors.Hand;
             usernameLabel.Font = new Font("Candara", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             usernameLabel.ForeColor = Color.PapayaWhip;
-            usernameLabel.Location = new Point(136, 27);
+            usernameLabel.Location = new Point(58, 30);
             usernameLabel.Name = "usernameLabel";
             usernameLabel.Size = new Size(65, 26);
             usernameLabel.TabIndex = 3;
@@ -58,7 +57,7 @@
             // pfpBox
             // 
             pfpBox.BackColor = Color.Tan;
-            pfpBox.Location = new Point(90, 22);
+            pfpBox.Location = new Point(12, 21);
             pfpBox.Name = "pfpBox";
             pfpBox.Size = new Size(40, 40);
             pfpBox.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -68,6 +67,7 @@
             // exitButton
             // 
             exitButton.BackColor = Color.Tan;
+            exitButton.Cursor = Cursors.Hand;
             exitButton.FlatAppearance.BorderSize = 0;
             exitButton.FlatStyle = FlatStyle.Flat;
             exitButton.Font = new Font("Consolas", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -80,34 +80,19 @@
             exitButton.UseVisualStyleBackColor = false;
             exitButton.Click += button1_Click_1;
             // 
-            // pictureBox2
-            // 
-            pictureBox2.BackColor = Color.Tan;
-            pictureBox2.BackgroundImage = Properties.Resources.book_41626;
-            pictureBox2.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox2.InitialImage = null;
-            pictureBox2.Location = new Point(12, 22);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(54, 40);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 28;
-            pictureBox2.TabStop = false;
-            pictureBox2.Click += pictureBox2_Click_1;
-            // 
             // panel1
             // 
             panel1.Dock = DockStyle.Bottom;
-            panel1.Location = new Point(0, 82);
+            panel1.Location = new Point(0, 84);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1089, 610);
+            panel1.Size = new Size(1089, 608);
             panel1.TabIndex = 29;
             // 
             // panel2
             // 
             panel2.BackColor = Color.Tan;
-            panel2.Controls.Add(pictureBox1);
+            panel2.Controls.Add(bookLand);
             panel2.Controls.Add(loginOrRegister);
-            panel2.Controls.Add(pictureBox2);
             panel2.Controls.Add(exitButton);
             panel2.Controls.Add(pfpBox);
             panel2.Controls.Add(usernameLabel);
@@ -117,26 +102,30 @@
             panel2.Size = new Size(1089, 84);
             panel2.TabIndex = 30;
             // 
-            // pictureBox1
+            // bookLand
             // 
-            pictureBox1.BackColor = Color.Tan;
-            pictureBox1.Image = Properties.Resources.text_1717247010360;
-            pictureBox1.Location = new Point(365, 21);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(329, 50);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 30;
-            pictureBox1.TabStop = false;
+            bookLand.BackColor = Color.Tan;
+            bookLand.Cursor = Cursors.Hand;
+            bookLand.Image = Properties.Resources.text_1717247010360;
+            bookLand.Location = new Point(380, 21);
+            bookLand.Name = "bookLand";
+            bookLand.Size = new Size(329, 50);
+            bookLand.SizeMode = PictureBoxSizeMode.StretchImage;
+            bookLand.TabIndex = 30;
+            bookLand.TabStop = false;
+            bookLand.Click += bookLand_Click;
             // 
             // loginOrRegister
             // 
             loginOrRegister.AutoSize = true;
-            loginOrRegister.Font = new Font("Candara", 15.75F);
-            loginOrRegister.Location = new Point(832, 27);
+            loginOrRegister.Cursor = Cursors.Hand;
+            loginOrRegister.Font = new Font("Candara", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            loginOrRegister.ForeColor = Color.PapayaWhip;
+            loginOrRegister.Location = new Point(901, 30);
             loginOrRegister.Name = "loginOrRegister";
-            loginOrRegister.Size = new Size(152, 26);
+            loginOrRegister.Size = new Size(107, 26);
             loginOrRegister.TabIndex = 29;
-            loginOrRegister.Text = "Login / Register";
+            loginOrRegister.Text = "Logout 🔘";
             loginOrRegister.Click += loginOrRegister_Click;
             // 
             // ContainerForm
@@ -153,10 +142,9 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "MyProfile";
             ((System.ComponentModel.ISupportInitialize)pfpBox).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)bookLand).EndInit();
             ResumeLayout(false);
         }
 
@@ -165,10 +153,9 @@
         private Label label3;
         private PictureBox pfpBox;
         private Button exitButton;
-        private PictureBox pictureBox2;
         private Panel panel1;
         private Panel panel2;
         private Label loginOrRegister;
-        private PictureBox pictureBox1;
+        private PictureBox bookLand;
     }
 }

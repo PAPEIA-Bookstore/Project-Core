@@ -41,9 +41,9 @@
             label_horror = new Label();
             categoriesLabel = new Label();
             label5 = new Label();
-            flowLayoutPanel1 = new FlowLayoutPanel();
-            textBox1 = new TextBox();
-            label4 = new Label();
+            flowLayoutPanel = new FlowLayoutPanel();
+            searchBar = new TextBox();
+            SearchLabel = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
@@ -91,9 +91,9 @@
             // splitContainer1.Panel2
             // 
             splitContainer1.Panel2.Controls.Add(label5);
-            splitContainer1.Panel2.Controls.Add(flowLayoutPanel1);
-            splitContainer1.Panel2.Controls.Add(textBox1);
-            splitContainer1.Panel2.Controls.Add(label4);
+            splitContainer1.Panel2.Controls.Add(flowLayoutPanel);
+            splitContainer1.Panel2.Controls.Add(searchBar);
+            splitContainer1.Panel2.Controls.Add(SearchLabel);
             splitContainer1.Size = new Size(1160, 704);
             splitContainer1.SplitterDistance = 228;
             splitContainer1.TabIndex = 21;
@@ -101,7 +101,7 @@
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(39, 412);
+            comboBox1.Location = new Point(42, 412);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(121, 23);
             comboBox1.TabIndex = 0;
@@ -204,31 +204,33 @@
             label5.TextAlign = ContentAlignment.MiddleCenter;
             label5.UseCompatibleTextRendering = true;
             // 
-            // flowLayoutPanel1
+            // flowLayoutPanel
             // 
-            flowLayoutPanel1.Location = new Point(3, 66);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(913, 626);
-            flowLayoutPanel1.TabIndex = 41;
+            flowLayoutPanel.Location = new Point(3, 66);
+            flowLayoutPanel.Name = "flowLayoutPanel";
+            flowLayoutPanel.Size = new Size(913, 626);
+            flowLayoutPanel.TabIndex = 41;
             // 
-            // textBox1
+            // searchBar
             // 
-            textBox1.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(521, 13);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(242, 35);
-            textBox1.TabIndex = 39;
+            searchBar.Font = new Font("Candara", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            searchBar.Location = new Point(533, 17);
+            searchBar.Name = "searchBar";
+            searchBar.Size = new Size(242, 31);
+            searchBar.TabIndex = 39;
             // 
-            // label4
+            // SearchLabel
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.FromArgb(73, 60, 52);
-            label4.Location = new Point(781, 18);
-            label4.Name = "label4";
-            label4.Size = new Size(42, 30);
-            label4.TabIndex = 40;
-            label4.Text = "🔍";
+            SearchLabel.AutoSize = true;
+            SearchLabel.Cursor = Cursors.Hand;
+            SearchLabel.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            SearchLabel.ForeColor = Color.FromArgb(73, 60, 52);
+            SearchLabel.Location = new Point(781, 18);
+            SearchLabel.Name = "SearchLabel";
+            SearchLabel.Size = new Size(42, 30);
+            SearchLabel.TabIndex = 40;
+            SearchLabel.Text = "🔍";
+            SearchLabel.Click += SearchLabel_Click;
             // 
             // HomePage
             // 
@@ -269,9 +271,9 @@
         private Label categoriesLabel;
         private ComboBox comboBox1;
         private Label label_sort;
-        private FlowLayoutPanel flowLayoutPanel1;
-        private TextBox textBox1;
-        private Label label4;
+        private FlowLayoutPanel flowLayoutPanel;
+        private TextBox searchBar;
+        private Label SearchLabel;
         private Label label5;
     }
 }

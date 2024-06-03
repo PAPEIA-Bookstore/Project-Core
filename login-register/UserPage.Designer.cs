@@ -28,49 +28,80 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
+            fullNameLabel = new Label();
             pictureBox1 = new PictureBox();
+            usernameLabel = new Label();
+            profCover = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)profCover).BeginInit();
             SuspendLayout();
             // 
-            // label1
+            // fullNameLabel
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(179, 73);
-            label1.Name = "label1";
-            label1.Size = new Size(94, 40);
-            label1.TabIndex = 0;
-            label1.Text = "label1";
+            fullNameLabel.AutoSize = true;
+            fullNameLabel.Font = new Font("Candara", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            fullNameLabel.ForeColor = Color.PapayaWhip;
+            fullNameLabel.Location = new Point(148, 240);
+            fullNameLabel.Name = "fullNameLabel";
+            fullNameLabel.Size = new Size(204, 36);
+            fullNameLabel.TabIndex = 0;
+            fullNameLabel.Text = "Name Surname";
             // 
             // pictureBox1
             // 
-            pictureBox1.Location = new Point(61, 52);
+            pictureBox1.Location = new Point(30, 240);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(100, 97);
+            pictureBox1.Size = new Size(100, 100);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
+            // 
+            // usernameLabel
+            // 
+            usernameLabel.AutoSize = true;
+            usernameLabel.Font = new Font("Candara", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            usernameLabel.ForeColor = Color.PapayaWhip;
+            usernameLabel.Location = new Point(148, 276);
+            usernameLabel.Name = "usernameLabel";
+            usernameLabel.Size = new Size(109, 23);
+            usernameLabel.TabIndex = 3;
+            usernameLabel.Text = "@username";
+            // 
+            // profCover
+            // 
+            profCover.Image = Properties.Resources.profCover;
+            profCover.Location = new Point(0, -3);
+            profCover.Name = "profCover";
+            profCover.Size = new Size(1089, 218);
+            profCover.SizeMode = PictureBoxSizeMode.StretchImage;
+            profCover.TabIndex = 4;
+            profCover.TabStop = false;
             // 
             // UserPage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.PapayaWhip;
-            ClientSize = new Size(800, 450);
+            BackColor = Color.Tan;
+            ClientSize = new Size(1089, 602);
+            Controls.Add(profCover);
+            Controls.Add(usernameLabel);
+            Controls.Add(fullNameLabel);
             Controls.Add(pictureBox1);
-            Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "UserPage";
             Text = "UserPage";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)profCover).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Label label1;
+        private Label fullNameLabel;
         private PictureBox pictureBox1;
+        private Label usernameLabel;
+        private PictureBox profCover;
     }
 }
